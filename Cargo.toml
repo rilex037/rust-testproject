@@ -1,0 +1,7 @@
+[package]
+name = "testproject"
+version = "0.1.0"
+edition = "2018"
+[[bin]]
+name = "test-app"
+path = "source/main.rs"
