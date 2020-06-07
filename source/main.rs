@@ -6,11 +6,11 @@ fn main() {
     let now = Instant::now();
     let array = vec![0; CAPACITY].into_boxed_slice();
 
-    println!("The array sum is {num}", num = return_number(array));
+    println!("The array sum is {num}", num = array_sum(array));
     println!(" time:{:?}", now.elapsed());
 }
 
-fn return_number(mut array: std::boxed::Box<[usize]>) -> usize {
+fn array_sum(mut array: std::boxed::Box<[usize]>) -> usize {
     array[1] = array[0] + 1;
 
     for i in 0..CAPACITY {
@@ -26,5 +26,5 @@ fn return_number(mut array: std::boxed::Box<[usize]>) -> usize {
 #[test]
 fn test_sum_array() {
     let array = vec![0; CAPACITY].into_boxed_slice();
-    assert_eq!(return_number(array), 124750);
+    assert_eq!(array_sum(array), 124750);
 }
